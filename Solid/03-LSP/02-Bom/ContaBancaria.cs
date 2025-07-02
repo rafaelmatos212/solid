@@ -32,5 +32,14 @@
             Saldo -= valor;
             Console.WriteLine($"Saque de {valor} realizado na Conta Corrente.");
         }
+
+        public void Emprestimo(decimal valor)
+        {
+            if (valor > Saldo * 2)
+                throw new Exception("Valor do empréstimo excede o limite permitido.");
+
+            Saldo += valor;
+            Console.WriteLine($"Empréstimo de {valor} realizado na Conta Corrente.");
+        }
     }
 }
