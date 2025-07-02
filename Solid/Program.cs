@@ -19,6 +19,7 @@ public class Program
         relatorioRepository.Salvar(relatorio);
 
 
+
         // OCP
         var pagamentoBoleto = new PagamentoBoleto();
         pagamentoBoleto.Pagar(100.0m);
@@ -26,6 +27,8 @@ public class Program
         Pagamento pagamentoPix;
         pagamentoPix = new PagamentoPix();
         pagamentoPix.Pagar(200.0m);
+
+
 
         // LSP
         ContaBancaria contaBancaria;
@@ -37,8 +40,9 @@ public class Program
         // DIP
         // -- Ruim
         var emailService = new EmailServiceRuim();
-        var fakeEmailService = new FakeEmailServiceRuim();
         var userService = new UserServiceRuim(emailService);
+
+        var fakeEmailService = new FakeEmailServiceRuim();
         var userService2 = new UserServiceRuim(fakeEmailService);
         // UserService depende de EmailService diretamente,
         // o que é ruim para testes e manutenção pois não consigo mockar.
@@ -46,8 +50,10 @@ public class Program
         // -- Bom
         var emailServiceBom = new EmailService();
         var outroEmailService = new FakeEmailService();
+
         var userServiceBom = new UserService(emailServiceBom);
-        var outroUserService = new UserService(outroEmailService);
+        //var userServiceBom = new UserService(outroEmailService);
+
 
 
         // Bônus
