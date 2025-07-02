@@ -40,29 +40,21 @@
         public abstract decimal Pagar(decimal valor);
     }
 
-
-    // Lógica específica para pagamento via Boleto
     public class PagamentoBoleto : Pagamento
     {
         public override decimal Pagar(decimal valor) => valor - (valor * 0.1M);
     }
 
-
-    // Lógica específica para pagamento via Cartão de Crédito
     public class PagamentoCartaoCredito : Pagamento
     {
         public override decimal Pagar(decimal valor) => valor * 0.05M;
     }
 
-
-    // Lógica específica para pagamento via Cartão de Débito
     public class PagamentoCartaoDebito : Pagamento
     {
         public override decimal Pagar(decimal valor) => valor * 0.02M;
     }
 
-
-    // Lógica específica para pagamento via Pix
     public class PagamentoPix : Pagamento
     {
         public override decimal Pagar(decimal valor) => valor - (valor * 0.01M);
