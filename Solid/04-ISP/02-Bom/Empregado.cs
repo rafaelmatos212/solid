@@ -6,13 +6,14 @@
         void CalcularSalario();
     }
 
-    public interface IContratarFuncionario
+    public interface IGerenciarFuncionario
     {
         void ContratarFuncionario();
+        void DemotirFuncionario();
     }
 
     // Classes que implementam as interfaces segregadas
-    public class Gerente : ICalcularSalario, IContratarFuncionario
+    public class Gerente : ICalcularSalario, IGerenciarFuncionario
     {
         public string Nome { get; set; } = string.Empty;
 
@@ -23,6 +24,10 @@
         public void ContratarFuncionario()
         {
             Console.WriteLine("Gerente contratando funcionário...");
+        }
+        public void DemotirFuncionario()
+        {
+            Console.WriteLine("Gerente demitindo funcionário...");
         }
     }
 
