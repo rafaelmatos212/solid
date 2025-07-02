@@ -5,16 +5,6 @@
         public abstract void EmitirSom();
     }
 
-    public class Animal
-    {
-        public virtual void EmitirSom()
-        {
-            Console.WriteLine("Som genérico de animal.");
-        }
-    }
-
-    // -----------------------------------------------------------------
-
     public class Cachorro : AnimalAbstrato
     {
         // Como a classe Cachorro herda de AnimalAbstrato,
@@ -33,7 +23,15 @@
         }
     }
 
+    // -----------------------------------------------------------------
 
+    public class Animal
+    {
+        public virtual void EmitirSom()
+        {
+            Console.WriteLine("Som genérico de animal.");
+        }
+    }
 
     public class Gato : Animal
     {
