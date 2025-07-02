@@ -1,0 +1,21 @@
+# Ignore a pasta do Visual Studio
+.vs/
+
+# Ignora resultados de build
+bin/
+obj/
+
+# Arquivos de usuário do VS
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Logs e outros arquivos temporários
+*.log
+
+# Rider
+.idea/
+
+# MacOS (caso esteja em dual boot ou GitHub Actions)
+.DS_Store
